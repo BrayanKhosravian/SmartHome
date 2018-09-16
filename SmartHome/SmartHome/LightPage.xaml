@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartHome.LightPage"
+
+             BackgroundColor="#282828"
+             Title="Light Options"
+             >
+
+    <StackLayout >
+
+        <StackLayout>
+            <Label Text="Lichteinstellungen"
+                   VerticalOptions="Start" 
+                   HorizontalOptions="CenterAndExpand" 
+                   TextColor="WhiteSmoke"/>
+
+            <Button Text="On" BackgroundColor="DimGray" TextColor="WhiteSmoke"/>
+            <Button Text="Off" BackgroundColor="DimGray" TextColor="WhiteSmoke"/>
+        </StackLayout>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Dimmfunktion:" 
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   TextColor="WhiteSmoke" 
+                   FontSize="18"/>
+
+            <Switch Grid.Row="0"
+                    Grid.Column="2"/>
+        </Grid>
+
+        <Slider Minimum="0" Maximum="100" />
+    </StackLayout>
+
+</ContentPage>

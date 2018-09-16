@@ -7,11 +7,16 @@ using Xamarin.Forms;
 
 namespace SmartHome
 {
-    public partial class MainPage : ContentPage
+    public partial class OptionPage : ContentPage
     {
-        public MainPage()
+        public OptionPage()
         {
             InitializeComponent();
+        }
+
+        private async void Button_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new LightPage());
         }
     }
 }

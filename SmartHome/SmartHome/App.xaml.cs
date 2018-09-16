@@ -11,7 +11,7 @@ namespace SmartHome
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage =  new NavigationPage(new OptionPage() );
         }
 
         protected override void OnStart()
