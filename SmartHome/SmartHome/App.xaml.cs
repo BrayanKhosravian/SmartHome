@@ -1,4 +1,5 @@
 ﻿using System;
+using SmartHome.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,12 +12,12 @@ namespace SmartHome
         {
             InitializeComponent();
 
-            MainPage =  new NavigationPage(new OptionPage() );
+            MainPage =  new NavigationPage(new StartPage() );
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            var i = DependencyService.Get<IBluetoothController>();
         }
 
         protected override void OnSleep()

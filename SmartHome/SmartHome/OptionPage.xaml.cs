@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SmartHome.Services;
+using SmartHome.ViewModels;
 using Xamarin.Forms;
 
 namespace SmartHome
@@ -12,11 +14,16 @@ namespace SmartHome
         public OptionPage()
         {
             InitializeComponent();
+
+            PageService pageService = new PageService(this);
+            BindingContext = new OptionPageViewModel(pageService);
         }
 
+        /*
         private async void Button_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new LightPage());
         }
+        */
     }
 }

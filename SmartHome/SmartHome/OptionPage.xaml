@@ -18,7 +18,7 @@
                    HorizontalOptions="Center"
                    TextColor="WhiteSmoke"/>
             <Button Text="Licht"
-                    Clicked="Button_OnClicked"
+                    Command="{Binding Command_OnClicked}"
                     BackgroundColor="DimGray" 
                     TextColor="WhiteSmoke"/>
             <Button Text="Temperatur" BackgroundColor="DimGray" TextColor="WhiteSmoke"/>
