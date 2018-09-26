@@ -8,6 +8,8 @@ namespace SmartHome
 {
     public partial class App : Application
     {
+         public readonly IBluetoothController BluetoothController = DependencyService.Get<IBluetoothController>();
+
         public App()
         {
             InitializeComponent();
@@ -17,7 +19,7 @@ namespace SmartHome
 
         protected override void OnStart()
         {
-            var i = DependencyService.Get<IBluetoothController>();
+            
         }
 
         protected override void OnSleep()

@@ -9,8 +9,8 @@
     <StackLayout >
 
         <StackLayout Padding="50">
-            <Button Text="On" BackgroundColor="DimGray" TextColor="WhiteSmoke"/>
-            <Button Text="Off" BackgroundColor="DimGray" TextColor="WhiteSmoke"/>
+            <Button Text="On" BackgroundColor="DimGray" TextColor="WhiteSmoke" Command="{Binding Command_Execute}" CommandParameter="Light_On"/>
+            <Button Text="Off" BackgroundColor="DimGray" TextColor="WhiteSmoke" Command="{Binding Command_Execute}" CommandParameter="Light_Off"/>
         </StackLayout>
 
         <Grid>
@@ -31,7 +31,8 @@
                    FontSize="18"/>
 
             <Switch Grid.Row="0"
-                    Grid.Column="2"/>
+                    Grid.Column="2"
+                    IsToggled="{Binding SwitchIsToggled, Mode=TwoWay}"/>
 
             <Label Text="{Binding Source={x:Reference thisSlider}, Path=Value, StringFormat=' {0:F0}', Mode=OneWay}"
                    TextColor="WhiteSmoke"
@@ -40,7 +41,8 @@
         </Grid>
 
         <Slider x:Name="thisSlider" 
-                Minimum="0" Maximum="100" Value="0"/>
+                Minimum="0" Maximum="100" Value="{Binding SliderValue, Mode=TwoWay}"
+                IsEnabled="{Binding SliderIsEnabled}"/>
 
     </StackLayout>
 
