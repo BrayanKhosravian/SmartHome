@@ -19,7 +19,8 @@ namespace SmartHome.ViewModels
                 execute: (string param) =>
                 {
                     _bluetoothController.SendData(param);
-                    ((App) Application.Current).BluetoothController.SendData(param);
+                    // ((App) Application.Current).BluetoothController.SendData(param);
+                    _bluetoothController.SendData(param);
                     ((Command)Command_Execute).ChangeCanExecute();
                 });
             
@@ -66,7 +67,7 @@ namespace SmartHome.ViewModels
                     sliderValue = value;
                     base.OnPropertyChanged();
                     
-                    if(sliderValue > 0 && sliderValue < 5) _bluetoothController.SendData("LightSlider0");
+                    if(sliderValue > 0 && sliderValue < 5){ _bluetoothController.SendData("LightSlider0");}
                     else if(sliderValue > 5 && sliderValue < 25) _bluetoothController.SendData("LightSlider25");
                     else if(sliderValue > 25 && sliderValue < 50) _bluetoothController.SendData("LightSlider50");
                     else if(sliderValue > 50 && sliderValue < 75) _bluetoothController.SendData("LightSlider75");

@@ -79,7 +79,6 @@ namespace SmartHome.Droid.Services
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                throw;
             }
             
         }

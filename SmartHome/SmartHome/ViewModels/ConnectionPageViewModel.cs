@@ -32,8 +32,8 @@ namespace SmartHome.ViewModels
                 return;
             }
 
-             bool isConnected = ((App) (Application.Current)).BluetoothController.ConnectTo(device?.Mac);
-            // bool isConnected = DependencyService.Get<IBluetoothController>().ConnectTo(device?.Mac);
+            // bool isConnected = ((App) (Application.Current)).BluetoothController.ConnectTo(device?.Mac);
+             bool isConnected = DependencyService.Get<IBluetoothController>().ConnectTo(device?.Mac);
 
             if (isConnected)
             {
@@ -52,8 +52,8 @@ namespace SmartHome.ViewModels
         private void CreateListView()
         {
             
-            var devices = ((App) Application.Current).BluetoothController.GetBondedDevices();
-           // var devices = DependencyService.Get<IBluetoothController>().GetBondedDevices();
+           // var devices = ((App) Application.Current).BluetoothController.GetBondedDevices();
+            var devices = DependencyService.Get<IBluetoothController>().GetBondedDevices();
             foreach (var device in devices)
             {
                 Items.Add(new CustomBluetoothDevice(device.Key, device.Value));

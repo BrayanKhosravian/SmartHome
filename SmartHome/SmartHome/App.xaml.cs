@@ -8,7 +8,7 @@ namespace SmartHome
 {
     public partial class App : Application
     {
-         public readonly IBluetoothController BluetoothController = DependencyService.Get<IBluetoothController>();
+        // public readonly IBluetoothController BluetoothController = DependencyService.Get<IBluetoothController>();
 
         public App()
         {

@@ -12,12 +12,14 @@ namespace SmartHome.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected readonly IPageService _pageService;
+        private bool _isBusy = false;
+        private object _isSelected = null;
+
         public BaseViewModel(IPageService pageService)
         {
             _pageService = pageService;
         }
 
-        private bool _isBusy = false;
         public bool IsBusy
         {
             get => _isBusy;
@@ -31,7 +33,6 @@ namespace SmartHome.ViewModels
             }
         }
 
-        private object _isSelected = null;
         public object IsSelected
         {
             get => _isSelected;
